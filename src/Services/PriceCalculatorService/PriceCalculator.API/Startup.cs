@@ -1,11 +1,14 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using PriceCalculator.API.Data;
+using PriceCalculator.API.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,12 +28,17 @@ namespace PriceCalculator.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // In Memory database package
+            // I used Microsoft.EntityFrameworkCore.InMemory
+            services.AddDbContext<VoyageDbContext>(options => options.UseInMemoryDatabase(databaseName: "Voyages"));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "PriceCalculator.API", Version = "v1" });
             });
+
+            services.AddScoped<IVoyageRepository, VoyageRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
