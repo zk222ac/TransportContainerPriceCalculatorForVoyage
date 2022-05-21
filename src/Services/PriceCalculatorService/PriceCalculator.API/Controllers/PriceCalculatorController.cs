@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PriceCalculator.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]/[Action]")]
     [ApiController]
     public class PriceCalculatorController : ControllerBase
     {
@@ -21,12 +21,20 @@ namespace PriceCalculator.API.Controllers
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        [HttpGet]
+        [HttpGet(Name ="GetVoyages")]
         [ProducesResponseType(typeof(IEnumerable<Voyage>), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<IEnumerable<Voyage>>> GetProducts()
+        public async Task<ActionResult<IEnumerable<Voyage>>> GetVoyages()
         {
             var products = await _repository.GetVoyages();
             return Ok(products);
+        }
+
+        [HttpPost]
+        [ProducesResponseType(typeof(Voyage), (int)HttpStatusCode.OK)]
+        public async Task<ActionResult<Voyage>> CreateVoyagePrice([FromBody] Voyage voyage)
+        {
+            await _repository.CreateVoyagePrice(voyage);
+            return CreatedAtRoute(nameof(GetVoyages), new { id = voyage.Id }, voyage);
         }
 
     }

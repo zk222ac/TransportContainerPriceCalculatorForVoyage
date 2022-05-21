@@ -20,8 +20,7 @@ namespace PriceCalculator.API.Data
                 context.Voyages.AddRange(
                     new Voyage
                     {
-                        VoyageCode = "451S",
-                        
+                        VoyageCode = "451S",                        
                         Container = "container1",
                         Currency = Currency.DKK,
                         Price = 109.90M,
