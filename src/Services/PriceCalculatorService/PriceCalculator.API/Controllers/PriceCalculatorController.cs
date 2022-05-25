@@ -31,11 +31,19 @@ namespace PriceCalculator.API.Controllers
 
         [HttpPost]
         [ProducesResponseType(typeof(Voyage), (int)HttpStatusCode.OK)]
-        public async Task<ActionResult<Voyage>> CreateVoyagePrice([FromBody] Voyage voyage)
+        public async Task<ActionResult<Voyage>> UpdatePrice([FromBody] Voyage voyage)
         {
-            await _repository.CreateVoyagePrice(voyage);
+            await _repository.UpdatePrice(voyage);
             return CreatedAtRoute(nameof(GetVoyages), new { id = voyage.Id }, voyage);
         }
 
+        [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<Voyage>), (int)HttpStatusCode.OK)]
+        [Route("{voyagecode}/{currency}", Name = "GetAveragePrice")]
+        public async Task<ActionResult<IEnumerable<Voyage>>> GetAveragePrice(string voyagecode , Currency currency)
+        {
+            var products = await _repository.GetAveragePrice(voyagecode,currency);
+            return Ok(products);
+        }
     }
 }

@@ -12,6 +12,7 @@ using PriceCalculator.API.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace PriceCalculator.API
@@ -35,9 +36,17 @@ namespace PriceCalculator.API
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "PriceCalculator.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "PriceCalculator.API", Version = "v1" });                
             });
 
+            // Swagger UI Web Api documentation Present enums as strings? ....
+            // after this line of code you can see Currency as a string in swagger API representation
+            // such as GBP, US and DKK
+            services.AddControllersWithViews()
+                .AddJsonOptions(options =>
+                options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+
+            // Describe here Dependency Injection concept of classes .........
             services.AddScoped<IVoyageRepository, VoyageRepository>();
         }
 
