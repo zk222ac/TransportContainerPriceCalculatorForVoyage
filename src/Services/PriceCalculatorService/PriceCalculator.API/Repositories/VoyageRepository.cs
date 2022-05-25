@@ -28,7 +28,7 @@ namespace PriceCalculator.API.Repositories
             //Using Method Syntax
             var getAveragePrice = _context.Voyages.ToList()
                                  .Where(voy => voy.VoyageCode == voyageCode && voy.Currency == currency)
-                                 .Average(voy => Convert.ToDecimal(voy.Price));
+                                 .Average(voy => voy.Price);
 
             return getAveragePrice;
         }
@@ -36,8 +36,11 @@ namespace PriceCalculator.API.Repositories
         public async Task<IEnumerable<Voyage>> GetVoyages()
         {
             return await _context.Voyages.ToListAsync();           
-        }      
-
-       
+        }
+        public async  Task<Voyage> GetVoyageCode(string voyageCode)
+        {
+            return await _context.Voyages.FirstOrDefaultAsync(v => v.VoyageCode == voyageCode);
+           
+        }
     }
 }

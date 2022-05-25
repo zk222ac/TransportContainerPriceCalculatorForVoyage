@@ -39,11 +39,20 @@ namespace PriceCalculator.API.Controllers
 
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<Voyage>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [Route("{voyagecode}/{currency}", Name = "GetAveragePrice")]
-        public async Task<ActionResult<IEnumerable<Voyage>>> GetAveragePrice(string voyagecode , Currency currency)
+        public async Task<ActionResult<IEnumerable<Voyage>>> GetAveragePrice(string voyageCode , Currency currency)
         {
-            var products = await _repository.GetAveragePrice(voyagecode,currency);
-            return Ok(products);
-        }
+            // we check voyageCode is exist in the database , if not found error
+            var voyage = await _repository.GetVoyageCode(voyageCode);
+            if (voyage == null)
+            {
+                _logger.LogError($"VouageCode:{voyageCode} is not exist in the database.");
+                return NotFound();
+            }
+            // calculate average price by currency and voyageCode
+            var avgPrice = await _repository.GetAveragePrice(voyageCode, currency);
+            return Ok(avgPrice);
+        }       
     }
 }
