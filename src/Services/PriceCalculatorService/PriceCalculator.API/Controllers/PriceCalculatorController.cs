@@ -14,7 +14,8 @@ namespace PriceCalculator.API.Controllers
     public class PriceCalculatorController : ControllerBase
     {
         private readonly IVoyageRepository _repository;
-        private readonly ILogger<PriceCalculatorController> _logger;
+        private readonly ILogger<PriceCalculatorController> _logger;      
+
         public PriceCalculatorController(IVoyageRepository repository, ILogger<PriceCalculatorController> logger)
         {
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
@@ -25,8 +26,11 @@ namespace PriceCalculator.API.Controllers
         [ProducesResponseType(typeof(IEnumerable<Voyage>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<IEnumerable<Voyage>>> GetVoyages()
         {
-            var products = await _repository.GetVoyages();
-            return Ok(products);
+
+            var voyages = await _repository.GetVoyages();
+            _logger.Log(LogLevel.Information, "Log information",voyages);
+            _logger.LogInformation("Log information", voyages);
+            return Ok(voyages);
         }
 
         [HttpPost]
@@ -41,18 +45,34 @@ namespace PriceCalculator.API.Controllers
         [ProducesResponseType(typeof(IEnumerable<Voyage>), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [Route("{voyagecode}/{currency}", Name = "GetAveragePrice")]
-        public async Task<ActionResult<IEnumerable<Voyage>>> GetAveragePrice(string voyageCode , Currency currency)
+        public async Task<ActionResult<IEnumerable<Voyage>>> GetAveragePrice(string voyagecode, Currency currency)
         {
             // we check voyageCode is exist in the database , if not found error
-            var voyage = await _repository.GetVoyageCode(voyageCode);
+            var voyage = await _repository.GetVoyageCode(voyagecode);
             if (voyage == null)
             {
-                _logger.LogError($"VouageCode:{voyageCode} is not exist in the database.");
+                _logger.LogError($"VouageCode:{voyagecode} is not exist in the database.");
                 return NotFound();
             }
             // calculate average price by currency and voyageCode
-            var avgPrice = await _repository.GetAveragePrice(voyageCode, currency);
+            var avgPrice = await _repository.GetAveragePrice(voyagecode, currency);
             return Ok(avgPrice);
-        }       
+        }
+
+        [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<Voyage>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [Route("{voyagecode}", Name = "GetVoyageCode")]
+        public async Task<ActionResult<Voyage>> GetVoyageCode(string voyagecode) 
+        {
+            // we check voyageCode is exist in the database , if not found error
+            var voyage = await _repository.GetVoyageCode(voyagecode);
+            if (voyage == null)
+            {
+                _logger.LogError($"VouageCode:{voyagecode} is not exist in the database.");
+                return NotFound();
+            }
+            return voyage;
+        }
     }
 }

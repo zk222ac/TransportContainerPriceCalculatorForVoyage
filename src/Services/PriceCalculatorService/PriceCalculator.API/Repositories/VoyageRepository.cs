@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PriceCalculator.API.Data;
 using PriceCalculator.API.Entities;
-using PriceCalculator.API.External_Supported_Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,11 +24,10 @@ namespace PriceCalculator.API.Repositories
 
         public async Task<decimal> GetAveragePrice(string voyageCode, Currency currency)
         {
-            //Using Method Syntax
-            var getAveragePrice = _context.Voyages.ToList()
-                                 .Where(voy => voy.VoyageCode == voyageCode && voy.Currency == currency)
-                                 .Average(voy => voy.Price);
-
+            //Using Method Syntax           
+            var getAveragePrice = await Task.FromResult(_context.Voyages.ToList().TakeLast(10)
+                                  .Where(voy => voy.VoyageCode == voyageCode && voy.Currency == currency)
+                                  .Average(voy => voy.Price));
             return getAveragePrice;
         }
 
@@ -39,8 +37,7 @@ namespace PriceCalculator.API.Repositories
         }
         public async  Task<Voyage> GetVoyageCode(string voyageCode)
         {
-            return await _context.Voyages.FirstOrDefaultAsync(v => v.VoyageCode == voyageCode);
-           
-        }
+            return await _context.Voyages.FirstOrDefaultAsync(v => v.VoyageCode == voyageCode);           
+        }       
     }
 }

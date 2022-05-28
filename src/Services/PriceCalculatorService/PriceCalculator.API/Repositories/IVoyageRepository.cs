@@ -10,6 +10,6 @@ namespace PriceCalculator.API.Repositories
         Task<IEnumerable<Voyage>> GetVoyages();
         Task<Voyage> GetVoyageCode(string voyageCode);
         Task UpdatePrice(Voyage voyage);
-        Task<decimal> GetAveragePrice(string voyageCode, Currency currency);
+        Task<decimal> GetAveragePrice(string voyageCode, Currency currency);        
     }
 }
