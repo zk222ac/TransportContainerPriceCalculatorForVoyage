@@ -46,4 +46,9 @@ I adopted the Repository # design Pattern architecture # to solve this challenge
 
 ![This is an image](https://ibb.co/Lk01kyk))
 
+# Archtecture Design: 
+
+![image](https://user-images.githubusercontent.com/11761314/170886909-21a1337a-55a7-42d4-9cee-9307ee34f01d.png)
+
+
 
