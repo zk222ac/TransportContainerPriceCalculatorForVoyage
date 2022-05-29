@@ -43,8 +43,8 @@ Good Luck! We look forward to reviewing your solution.
 # solution # 
 I adopted the Repository # design Pattern architecture # to solve this challenge. 
 
+![RepositoryDesignPattern](https://user-images.githubusercontent.com/11761314/170886974-2e4df624-878b-4417-99bf-ee8ea8390f58.png)
 
-![This is an image](https://ibb.co/Lk01kyk))
 
 # Archtecture Design: 
 
