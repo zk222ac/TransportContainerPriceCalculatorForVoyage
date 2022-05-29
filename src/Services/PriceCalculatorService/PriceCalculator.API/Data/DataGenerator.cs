@@ -115,7 +115,17 @@ namespace PriceCalculator.API.Data
                          Price = 465.98M,
                          //Price = string.Format(new CultureInfo("en-US"), "{0:C}", 1456.12155),
                          TimeStamp = DateTime.Now
-                     });
+                     },
+                      new Voyage
+                      {
+                          VoyageCode = "LS45",
+                          Container = "container12",
+                          Currency = Currency.GBP,
+                          Price = 700.98M,
+                          //Price = string.Format(new CultureInfo("en-US"), "{0:C}", 1456.12155),
+                          TimeStamp = DateTime.Now
+                      }
+                     );
 
                 context.SaveChanges();
             }
