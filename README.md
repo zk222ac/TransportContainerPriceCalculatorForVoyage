@@ -39,7 +39,11 @@ The requirements intentionally leave a lot of design decisions up to you, so use
 how you would approach the described problem from both a (technical) design and implementation point of
 view.
 Good Luck! We look forward to reviewing your solution.
------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # solution # 
+I adopted the Repository # design Pattern architecture # to solve this challenge. 
+
+
+![This is an image](https://ibb.co/Lk01kyk))
 
 
