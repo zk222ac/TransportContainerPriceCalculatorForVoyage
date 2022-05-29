@@ -68,6 +68,23 @@ once you downloded this application , you need to simply run the application as 
 
 ![image](https://user-images.githubusercontent.com/11761314/170888081-98c4dcdb-e7c8-466c-9c89-d6cca159a1eb.png)
 
+## Data schema :
+![image](https://user-images.githubusercontent.com/11761314/170888116-f5f5ccf7-9cc2-4b1c-acb4-347d0a022cbe.png)
+
+As you can see webAPI have four endpoints but two end points are the main requirements in this app.
+> **GetVoyages**
+> **Update Price**
+> **Get Average Price**
+
+## Step no : 2 --> Get all Voyages ( Show all containers with diffrent prices and currency)
+![image](https://user-images.githubusercontent.com/11761314/170888442-0b309057-a049-438b-82ad-2d26f7fbd9fb.png)
+
+## Step no : 3 --> Update Price ( Add new price with specified currency)
+![image](https://user-images.githubusercontent.com/11761314/170890151-f35f7f3e-a16a-4104-b7a0-1b2f6c525ffa.png)
+
+Above diagram explain how we send POST request , when we send it we dont need Id because it is system can generate Id automatically. after this we are able to register new price with new values. Below diagram show the API response and generated New item values.
+
+![image](https://user-images.githubusercontent.com/11761314/170890712-4f352b5b-ac8b-4963-b4af-e7cb046f67df.png)
 
 
 
