@@ -50,5 +50,24 @@ I adopted the Repository # design Pattern architecture # to solve this challenge
 
 ![image](https://user-images.githubusercontent.com/11761314/170886909-21a1337a-55a7-42d4-9cee-9307ee34f01d.png)
 
+In this diagram I have created different folders for their own responsibilties
+> **Controller** : controller folder responsible for handling / fetching data from business layer via application abstract layer.
+> **Data** : this folder is held responsible for creating and mainting Db context class.
+> **Entities** : this folder represent application data model classes. 
+> **Repositories** : abstraction layer between business and data access layer.
+
+# DDL : .Net Dynamic link libraries
+> Microsoft Entityframework Core 
+> Microsoft Entityframework Core InMemory 
+> Swash buckle Asp Net Core ( Web API UI interface)
+
+# Core Application functionalities:
+
+## Step no 1 : Application shows different container price with different currency 
+once you downloded this application , you need to simply run the application as usual you run your application via Visual studio program. Click executable button.
+
+![image](https://user-images.githubusercontent.com/11761314/170888081-98c4dcdb-e7c8-466c-9c89-d6cca159a1eb.png)
+
+
 
 
