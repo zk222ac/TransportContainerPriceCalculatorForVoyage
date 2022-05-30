@@ -106,6 +106,20 @@ Get average price for DKK currency
 ![image](https://user-images.githubusercontent.com/11761314/171035589-21c994f6-fc7f-40c8-9fe0-57a59aa1c698.png)
 
 
+# How I perform Unit Testing ? 
+There are many benefits for unit testing but one of the most is test application parallel during application development. We save our time when we hand over a application to SQL Manager or Client.
+
+I followed the AAA ( Design pattern approach for unit testing 
+I used core unit test DLLs
+- Fluent Assertions
+- Moq
+- Xunit
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+Finally I used also **built in .Net core Logger information** in the application and save all error information in a log file. Last but least I used **async programming technique or model** through out in my controller method where performance of application is boosted. I assumed that many users can simultanously call this webAPI at the same time and get response immediately without any delay of time 
+![image](https://user-images.githubusercontent.com/11761314/171040567-929a1b00-587f-4df6-9985-bbc20ee2a513.png)
+
 
 
 
