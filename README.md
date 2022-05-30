@@ -90,11 +90,14 @@ As you can see webAPI have four endpoints but two end points are the main requir
 
 Above diagram explain how we send POST request , when we send it we dont need Id because it is system can generate Id automatically. after this we are able to register new price with new values. Below diagram show the API response and generated New item values.
 
+## output :
 ![image](https://user-images.githubusercontent.com/11761314/170890712-4f352b5b-ac8b-4963-b4af-e7cb046f67df.png)
 
 ## Step no : 4 --> Get Average Price (returns the last 10 prices for containers booked on a given voyage)
 ![image](https://user-images.githubusercontent.com/11761314/171035173-4c1c8c44-4687-4650-8611-0524c3f8062a.png)
 
+## output: 
+![image](https://user-images.githubusercontent.com/11761314/171035438-1ad56f99-f0f0-4b61-b954-7517fc1a3266.png)
 
 
 
