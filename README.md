@@ -42,6 +42,12 @@ Good Luck! We look forward to reviewing your solution.
 
 # solution # 
 I adopted the Repository # design Pattern architecture # to solve this challenge. 
+Benefits of Repository Pattern
+
+- It centralizes data logic or business logic and service logic.
+- It gives a substitution point for the unit tests.
+- Provides a flexible architecture.
+- If you want to modify the data access logic or business access logic, you don’t need to change the repository logic.
 
 ![RepositoryDesignPattern](https://user-images.githubusercontent.com/11761314/170886974-2e4df624-878b-4417-99bf-ee8ea8390f58.png)
 
@@ -85,6 +91,11 @@ As you can see webAPI have four endpoints but two end points are the main requir
 Above diagram explain how we send POST request , when we send it we dont need Id because it is system can generate Id automatically. after this we are able to register new price with new values. Below diagram show the API response and generated New item values.
 
 ![image](https://user-images.githubusercontent.com/11761314/170890712-4f352b5b-ac8b-4963-b4af-e7cb046f67df.png)
+
+## Step no : 4 --> Get Average Price (returns the last 10 prices for containers booked on a given voyage)
+![image](https://user-images.githubusercontent.com/11761314/171035173-4c1c8c44-4687-4650-8611-0524c3f8062a.png)
+
+
 
 
 
