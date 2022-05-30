@@ -97,7 +97,14 @@ Above diagram explain how we send POST request , when we send it we dont need Id
 ![image](https://user-images.githubusercontent.com/11761314/171035173-4c1c8c44-4687-4650-8611-0524c3f8062a.png)
 
 ## output: 
+Get average price for US currency 
 ![image](https://user-images.githubusercontent.com/11761314/171035438-1ad56f99-f0f0-4b61-b954-7517fc1a3266.png)
+
+Get average price for DKK currency 
+![image](https://user-images.githubusercontent.com/11761314/171035525-d28abae2-02de-459b-971c-e6bbf07763eb.png)
+
+![image](https://user-images.githubusercontent.com/11761314/171035589-21c994f6-fc7f-40c8-9fe0-57a59aa1c698.png)
+
 
 
 
