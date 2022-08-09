@@ -52,6 +52,7 @@ namespace PriceCalculator.API.Controllers
             if (voyage == null)
             {
                 _logger.LogError($"VouageCode:{voyagecode} is not exist in the database.");
+                _logger.LogWarning("Null VoyageCode Warning");
                 return NotFound();
             }
             // calculate average price by currency and voyageCode

@@ -24,10 +24,16 @@ namespace PriceCalculator.API.Repositories
 
         public async Task<decimal> GetAveragePrice(string voyageCode, Currency currency)
         {
+
+            var getall = await _context.Voyages.ToListAsync();
+
+            var code = getall
+                .Where(voy => voy.VoyageCode == voyageCode && voy.Currency == currency)
+                .TakeLast(10).Average(voy => voy.Price);
             //Using Method Syntax           
-            var getAveragePrice = await Task.FromResult(_context.Voyages.ToList().TakeLast(10)
+            var getAveragePrice =(await _context.Voyages.ToListAsync())
                                   .Where(voy => voy.VoyageCode == voyageCode && voy.Currency == currency)
-                                  .Average(voy => voy.Price));
+                                  .Average(voy => voy.Price);
             return getAveragePrice;
         }
 
