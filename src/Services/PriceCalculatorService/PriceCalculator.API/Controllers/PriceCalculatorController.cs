@@ -14,8 +14,11 @@ namespace PriceCalculator.API.Controllers
     public class PriceCalculatorController : ControllerBase
     {
         private readonly IVoyageRepository _repository;
-        private readonly ILogger<PriceCalculatorController> _logger;      
-
+        private readonly ILogger<PriceCalculatorController> _logger;
+        public PriceCalculatorController()
+        {
+            // Here Iam developing null constructor for Unit Testing purpose
+        }
         public PriceCalculatorController(IVoyageRepository repository, ILogger<PriceCalculatorController> logger)
         {
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
