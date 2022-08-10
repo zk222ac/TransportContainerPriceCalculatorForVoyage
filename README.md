@@ -123,6 +123,10 @@ Finally I used also **built in .Net core Logger information** in the application
 
 ## Finally I am ready to show you a DEMO of this application !
 
+## Centralized Logging System !
+I used Serilog .Net Framework for Centralixed logging. All logging information saved in log.txt file under the project directory.
+## https://serilog.net/ ( Seri Log)
+
 
 
 
