@@ -35,6 +35,8 @@ namespace Container.Xunit
             var okResult =  await _controller.GetVoyages();
             // Assert
             Assert.IsType<OkObjectResult>(okResult);
+
+
         }
         
         [Fact]
