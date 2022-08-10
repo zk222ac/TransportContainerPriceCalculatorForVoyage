@@ -15,7 +15,7 @@ namespace PriceCalculator.API.Repositories
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
-
+       
         public async Task UpdatePrice(Voyage voyage)
         {
             await _context.Voyages.AddAsync(voyage);

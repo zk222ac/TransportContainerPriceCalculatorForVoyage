@@ -109,3 +109,117 @@
 2022-08-10 20:51:50.132 +02:00 [INF] Executed endpoint 'PriceCalculator.API.Controllers.PriceCalculatorController.GetVoyages (PriceCalculator.API)'
 2022-08-10 20:51:50.136 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/PriceCalculator/GetVoyages - - - 200 - application/json;+charset=utf-8 419.0768ms
 2022-08-10 23:16:34.188 +02:00 [INF] Starting Web Host
+2022-08-10 23:43:43.308 +02:00 [INF] Starting Web Host
+2022-08-10 23:43:46.403 +02:00 [INF] Entity Framework Core 5.0.0 initialized 'VoyageDbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=Voyages 
+2022-08-10 23:43:46.738 +02:00 [INF] Saved 12 entities to in-memory store.
+2022-08-10 23:43:47.126 +02:00 [INF] User profile is available. Using 'C:\Users\zk222\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-08-10 23:43:49.941 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger - -
+2022-08-10 23:43:50.164 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger - - - 301 0 - 227.4447ms
+2022-08-10 23:43:50.193 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - -
+2022-08-10 23:43:50.296 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 102.9075ms
+2022-08-10 23:43:50.324 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - -
+2022-08-10 23:43:50.325 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - -
+2022-08-10 23:43:50.360 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - -
+2022-08-10 23:43:50.521 +02:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-08-10 23:43:50.535 +02:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-08-10 23:43:50.544 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - - - 200 311804 application/javascript 219.6909ms
+2022-08-10 23:43:50.556 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - - - 200 142933 text/css 230.9770ms
+2022-08-10 23:43:50.590 +02:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-08-10 23:43:50.636 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - - - 200 986342 application/javascript 275.3349ms
+2022-08-10 23:43:50.985 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js.map - -
+2022-08-10 23:43:50.985 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js.map - -
+2022-08-10 23:43:51.011 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - -
+2022-08-10 23:43:51.070 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js.map - - - 404 0 - 85.1019ms
+2022-08-10 23:43:51.082 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js.map - - - 404 0 - 92.0266ms
+2022-08-10 23:43:51.090 +02:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/swagger/swagger-ui-bundle.js.map - -
+2022-08-10 23:43:51.095 +02:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/swagger/swagger-ui-bundle.js.map - - - 404 0 - 4.5730ms
+2022-08-10 23:43:51.099 +02:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/swagger/swagger-ui-standalone-preset.js.map - -
+2022-08-10 23:43:51.106 +02:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/swagger/swagger-ui-standalone-preset.js.map - - - 404 0 - 6.4611ms
+2022-08-10 23:43:51.261 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 250.8899ms
+2022-08-10 23:51:25.157 +02:00 [INF] Starting Web Host
+2022-08-10 23:51:27.866 +02:00 [INF] Entity Framework Core 5.0.0 initialized 'VoyageDbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=Voyages 
+2022-08-10 23:51:28.131 +02:00 [INF] Saved 12 entities to in-memory store.
+2022-08-10 23:51:28.429 +02:00 [INF] User profile is available. Using 'C:\Users\zk222\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-08-10 23:51:31.034 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger - -
+2022-08-10 23:51:31.109 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger - - - 301 0 - 79.6115ms
+2022-08-10 23:51:31.145 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - -
+2022-08-10 23:51:31.293 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 148.5370ms
+2022-08-10 23:51:31.362 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - -
+2022-08-10 23:51:31.368 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - -
+2022-08-10 23:51:31.368 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - -
+2022-08-10 23:51:31.525 +02:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-08-10 23:51:31.559 +02:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-08-10 23:51:31.563 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - - - 200 986342 application/javascript 195.6616ms
+2022-08-10 23:51:31.562 +02:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-08-10 23:51:31.573 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - - - 200 142933 text/css 205.6534ms
+2022-08-10 23:51:31.590 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - - - 200 311804 application/javascript 228.3742ms
+2022-08-10 23:51:31.847 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js.map - -
+2022-08-10 23:51:31.906 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js.map - - - 404 0 - 59.7988ms
+2022-08-10 23:51:31.911 +02:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/swagger/swagger-ui-bundle.js.map - -
+2022-08-10 23:51:31.918 +02:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/swagger/swagger-ui-bundle.js.map - - - 404 0 - 4.9809ms
+2022-08-10 23:51:32.029 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js.map - -
+2022-08-10 23:51:32.034 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js.map - - - 404 0 - 4.4075ms
+2022-08-10 23:51:32.039 +02:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/swagger/swagger-ui-standalone-preset.js.map - -
+2022-08-10 23:51:32.042 +02:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/swagger/swagger-ui-standalone-preset.js.map - - - 404 0 - 3.0277ms
+2022-08-10 23:51:32.162 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - -
+2022-08-10 23:51:32.293 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 130.4330ms
+2022-08-10 23:51:35.339 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/PriceCalculator/GetVoyages - -
+2022-08-10 23:51:35.347 +02:00 [INF] Executing endpoint 'PriceCalculator.API.Controllers.PriceCalculatorController.GetVoyages (PriceCalculator.API)'
+2022-08-10 23:51:35.383 +02:00 [INF] Executed endpoint 'PriceCalculator.API.Controllers.PriceCalculatorController.GetVoyages (PriceCalculator.API)'
+2022-08-10 23:51:35.396 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Multiple constructors accepting all given argument types have been found in type 'PriceCalculator.API.Controllers.PriceCalculatorController'. There should only be one applicable constructor.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.TryFindMatchingConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& parameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& matchingParameterMap)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.CreateFactory(Type instanceType, Type[] argumentTypes)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.CreateActivator(ControllerActionDescriptor descriptor)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.CreateControllerFactory(ControllerActionDescriptor descriptor)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvokerCache.GetCachedResult(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvokerProvider.OnProvidersExecuting(ActionInvokerProviderContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionInvokerFactory.CreateInvoker(ActionContext actionContext)
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointFactory.<>c__DisplayClass7_0.<CreateRequestDelegate>b__0(HttpContext context)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-08-10 23:51:35.540 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/PriceCalculator/GetVoyages - - - 500 - text/plain 201.4463ms
+2022-08-10 23:52:36.897 +02:00 [INF] Starting Web Host
+2022-08-10 23:52:40.233 +02:00 [INF] Entity Framework Core 5.0.0 initialized 'VoyageDbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=Voyages 
+2022-08-10 23:52:40.571 +02:00 [INF] Saved 12 entities to in-memory store.
+2022-08-10 23:52:40.890 +02:00 [INF] User profile is available. Using 'C:\Users\zk222\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-08-10 23:52:43.407 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger - -
+2022-08-10 23:52:43.528 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger - - - 301 0 - 129.6935ms
+2022-08-10 23:52:43.601 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/index.html - -
+2022-08-10 23:52:43.725 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/index.html - - - 200 - text/html;charset=utf-8 123.8735ms
+2022-08-10 23:52:43.746 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - -
+2022-08-10 23:52:43.747 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - -
+2022-08-10 23:52:43.747 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - -
+2022-08-10 23:52:43.958 +02:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-08-10 23:52:43.969 +02:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-08-10 23:52:43.966 +02:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-08-10 23:52:43.999 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js - - - 200 986342 application/javascript 251.3100ms
+2022-08-10 23:52:43.999 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui.css - - - 200 142933 text/css 253.0573ms
+2022-08-10 23:52:43.999 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js - - - 200 311804 application/javascript 251.2927ms
+2022-08-10 23:52:44.159 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js.map - -
+2022-08-10 23:52:44.192 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-bundle.js.map - - - 404 0 - 32.7476ms
+2022-08-10 23:52:44.196 +02:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/swagger/swagger-ui-bundle.js.map - -
+2022-08-10 23:52:44.199 +02:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/swagger/swagger-ui-bundle.js.map - - - 404 0 - 3.2854ms
+2022-08-10 23:52:44.309 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js.map - -
+2022-08-10 23:52:44.313 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/swagger-ui-standalone-preset.js.map - - - 404 0 - 3.8493ms
+2022-08-10 23:52:44.332 +02:00 [INF] Request starting HTTP/1.1 GET http://127.0.0.1:5000/swagger/swagger-ui-standalone-preset.js.map - -
+2022-08-10 23:52:44.336 +02:00 [INF] Request finished HTTP/1.1 GET http://127.0.0.1:5000/swagger/swagger-ui-standalone-preset.js.map - - - 404 0 - 3.6681ms
+2022-08-10 23:52:44.411 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - -
+2022-08-10 23:52:44.543 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 132.3617ms
+2022-08-10 23:53:34.892 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/PriceCalculator/GetVoyages - -
+2022-08-10 23:53:34.916 +02:00 [INF] Executing endpoint 'PriceCalculator.API.Controllers.PriceCalculatorController.GetVoyages (PriceCalculator.API)'
+2022-08-10 23:53:34.951 +02:00 [INF] Route matched with {action = "GetVoyages", controller = "PriceCalculator"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PriceCalculator.API.Entities.Voyage]]] GetVoyages() on controller PriceCalculator.API.Controllers.PriceCalculatorController (PriceCalculator.API).
+2022-08-10 23:53:35.074 +02:00 [INF] Executing action method PriceCalculator.API.Controllers.PriceCalculatorController.GetVoyages (PriceCalculator.API) - Validation state: "Valid"
+2022-08-10 23:53:35.101 +02:00 [INF] Entity Framework Core 5.0.0 initialized 'VoyageDbContext' using provider 'Microsoft.EntityFrameworkCore.InMemory' with options: StoreName=Voyages 
+2022-08-10 23:53:35.149 +02:00 [INF] Log information
+2022-08-10 23:53:35.153 +02:00 [INF] Log information
+2022-08-10 23:53:35.163 +02:00 [INF] Executed action method PriceCalculator.API.Controllers.PriceCalculatorController.GetVoyages (PriceCalculator.API), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 78.7386ms.
+2022-08-10 23:53:35.170 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PriceCalculator.API.Entities.Voyage, PriceCalculator.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-08-10 23:53:35.198 +02:00 [INF] Executed action PriceCalculator.API.Controllers.PriceCalculatorController.GetVoyages (PriceCalculator.API) in 237.0586ms
+2022-08-10 23:53:35.202 +02:00 [INF] Executed endpoint 'PriceCalculator.API.Controllers.PriceCalculatorController.GetVoyages (PriceCalculator.API)'
+2022-08-10 23:53:35.208 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/PriceCalculator/GetVoyages - - - 200 - application/json;+charset=utf-8 316.1074ms

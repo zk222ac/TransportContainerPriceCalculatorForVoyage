@@ -15,15 +15,12 @@ namespace PriceCalculator.API.Controllers
     {
         private readonly IVoyageRepository _repository;
         private readonly ILogger<PriceCalculatorController> _logger;
-        public PriceCalculatorController()
-        {
-            // Here Iam developing null constructor for Unit Testing purpose
-        }
         public PriceCalculatorController(IVoyageRepository repository, ILogger<PriceCalculatorController> logger)
         {
-            _repository = repository ?? throw new ArgumentNullException(nameof(repository));
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _repository = repository ?? throw new ArgumentNullException(nameof(repository));            
+           _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
+
 
         [HttpGet(Name ="GetVoyages")]
         [ProducesResponseType(typeof(IEnumerable<Voyage>), (int)HttpStatusCode.OK)]
@@ -76,7 +73,7 @@ namespace PriceCalculator.API.Controllers
                 _logger.LogError($"VouageCode:{voyagecode} is not exist in the database.");
                 return NotFound();
             }
-            return voyage;
+            return Ok(voyage);
         }
     }
 }

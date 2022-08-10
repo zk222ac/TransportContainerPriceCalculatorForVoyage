@@ -5,7 +5,10 @@ namespace PriceCalculator.API.Data
 {
     public class VoyageDbContext : DbContext
     {
-        public VoyageDbContext(DbContextOptions<VoyageDbContext> options): base(options) { }
+        public VoyageDbContext(DbContextOptions<VoyageDbContext> options): base(options) 
+        {
+            Database.EnsureCreatedAsync();
+        }
 
         public DbSet<Voyage> Voyages { get; set; }        
     }
