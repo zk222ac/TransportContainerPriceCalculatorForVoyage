@@ -132,7 +132,7 @@ namespace Container.Xunit
 
 
         [Fact]
-        public async Task Get_Return_All_Voyages()
+        public async Task GetWhenCalledReturnsOkResult()
         {
             // fake Logger mock 
             var logger = Mock.Of<ILogger<PriceCalculatorController>>();          
@@ -152,6 +152,33 @@ namespace Container.Xunit
 
             //Assert            
             Assert.IsType<OkObjectResult>(actionResult.Result);            
+        }
+
+        [Fact]
+        public async Task GetWhenCalledReturnsAllVoyages()
+        {
+            // fake Logger mock 
+            var logger = Mock.Of<ILogger<PriceCalculatorController>>();
+            // I I use the 3A Pattern ( Arrange-Act-Assert) 
+            // Arrange 
+            // I add FakeitEasy DLL for adding fake IVoyage repository 
+            // as our PriceCalculator Controller accept as a IVoyageRepository interface object "datasource"
+            int count = 5;
+            var dataStore = A.Fake<IVoyageRepository>();
+            //var logger = A.Fake<ILogger>(PriceCalculatorController); 
+            var fakeInventories = A.CollectionOfDummy<Voyage>(count).AsEnumerable();
+            A.CallTo(() => dataStore.GetVoyages()).Returns(Task.FromResult(fakeInventories));
+            var controller = new PriceCalculatorController(dataStore, logger);
+
+            //Act
+            var actionResult = await controller.GetVoyages();
+
+            //Assert            
+            Assert.IsType<OkObjectResult>(actionResult.Result);
+            var list = actionResult.Result as OkObjectResult;
+            Assert.IsType<List<Voyage>>(list.Value);
+            var listBooks = list.Value as List<Voyage>;
+            Assert.Equal(5, listBooks.Count);
         }
     }
 }
