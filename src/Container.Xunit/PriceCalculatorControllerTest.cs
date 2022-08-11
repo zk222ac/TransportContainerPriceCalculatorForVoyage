@@ -1,9 +1,7 @@
-using Container.Xunit.Fake_Repository;
 using FakeItEasy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
-//using Microsoft.AspNetCore.Mvc;
 using PriceCalculator.API.Controllers;
 using PriceCalculator.API.Entities;
 using PriceCalculator.API.Repositories;
@@ -179,6 +177,114 @@ namespace Container.Xunit
             Assert.IsType<List<Voyage>>(list.Value);
             var listBooks = list.Value as List<Voyage>;
             Assert.Equal(5, listBooks.Count);
+        }
+        [Fact]
+        public void GetByVoyageCodeUnknownVoyageCodePassedReturnsNotFoundResult()
+        {
+            // fake Logger mock 
+            var logger = Mock.Of<ILogger<PriceCalculatorController>>();
+            // I I use the 3A Pattern ( Arrange-Act-Assert) 
+            // Arrange 
+            // I add FakeitEasy DLL for adding fake IVoyage repository 
+            // as our PriceCalculator Controller accept as a IVoyageRepository interface object "datasource"
+            int count = 5;
+            var dataStore = A.Fake<IVoyageRepository>();
+            //var logger = A.Fake<ILogger>(PriceCalculatorController); 
+            var fakeInventories = A.CollectionOfDummy<Voyage>(count).AsEnumerable();
+            A.CallTo(() => dataStore.GetVoyages()).Returns(Task.FromResult(fakeInventories));
+            var controller = new PriceCalculatorController(dataStore, logger);
+            // Act
+            var notFoundResult = controller.GetVoyageCode("DGFJFFJFJ");
+            // Assert
+            Assert.IsType<NotFoundResult>(notFoundResult);
+        }
+
+        [Fact]
+        public void GetByVoyageCodeExistingVoyageCodePassed_ReturnsOkResult()
+        {
+            // Arrange
+             // fake Logger mock 
+            var logger = Mock.Of<ILogger<PriceCalculatorController>>();
+            // I I use the 3A Pattern ( Arrange-Act-Assert) 
+            // Arrange 
+            // I add FakeitEasy DLL for adding fake IVoyage repository 
+            // as our PriceCalculator Controller accept as a IVoyageRepository interface object "datasource"
+            int count = 5;
+            var dataStore = A.Fake<IVoyageRepository>();
+            //var logger = A.Fake<ILogger>(PriceCalculatorController); 
+            var fakeInventories = A.CollectionOfDummy<Voyage>(count).AsEnumerable();
+            A.CallTo(() => dataStore.GetVoyages()).Returns(Task.FromResult(fakeInventories));
+            var controller = new PriceCalculatorController(dataStore, logger);
+            var voyageCode = "451S";
+            // Act
+            var okResult = controller.GetVoyageCode(voyageCode);
+            // Assert
+            Assert.IsType<OkObjectResult>(okResult);
+        }
+
+        [Fact]
+        public void UpdateInvalidObjectPassedReturnsBadRequest()
+        {
+            // Arrange
+            // fake Logger mock 
+            var logger = Mock.Of<ILogger<PriceCalculatorController>>();
+            // I I use the 3A Pattern ( Arrange-Act-Assert) 
+            // Arrange 
+            // I add FakeitEasy DLL for adding fake IVoyage repository 
+            // as our PriceCalculator Controller accept as a IVoyageRepository interface object "datasource"
+            int count = 5;
+            var dataStore = A.Fake<IVoyageRepository>();
+            //var logger = A.Fake<ILogger>(PriceCalculatorController); 
+            var fakeInventories = A.CollectionOfDummy<Voyage>(count).AsEnumerable();
+            A.CallTo(() => dataStore.GetVoyages()).Returns(Task.FromResult(fakeInventories));
+            var controller = new PriceCalculatorController(dataStore, logger);
+
+            // Arrange
+            var nameMissingItem = new Voyage()
+            {
+                Id = 2,
+                Price = 12.00M,
+                TimeStamp = System.DateTimeOffset.UtcNow,
+                VoyageCode = "SDKDKDDK"
+            };
+
+
+            controller.ModelState.AddModelError("Name", "Required");
+            // Act
+            var badResponse = controller.UpdatePrice(nameMissingItem);
+            // Assert
+            Assert.IsType<BadRequestObjectResult>(badResponse);
+        }
+        [Fact]
+        public void UpdateValidObjectPassedReturnedResponseHasCreatedItem()
+        {
+            // Arrange
+            // fake Logger mock 
+            var logger = Mock.Of<ILogger<PriceCalculatorController>>();
+            // I I use the 3A Pattern ( Arrange-Act-Assert) 
+            // Arrange 
+            // I add FakeitEasy DLL for adding fake IVoyage repository 
+            // as our PriceCalculator Controller accept as a IVoyageRepository interface object "datasource"
+            int count = 5;
+            var dataStore = A.Fake<IVoyageRepository>();
+            //var logger = A.Fake<ILogger>(PriceCalculatorController); 
+            var fakeInventories = A.CollectionOfDummy<Voyage>(count).AsEnumerable();
+            A.CallTo(() => dataStore.GetVoyages()).Returns(Task.FromResult(fakeInventories));
+            var controller = new PriceCalculatorController(dataStore, logger);
+            // Arrange
+            Voyage testItem = new Voyage()
+            {
+                Id = 2,
+                Price = 12.00M,
+                TimeStamp = System.DateTimeOffset.UtcNow,
+                VoyageCode = "SDKDKDDK"
+            };
+            // Act
+            var createdResponse = controller.UpdatePrice(testItem);
+            var item = createdResponse;
+            // Assert
+            Assert.IsType<Voyage>(item);
+            Assert.Equal("Guinness Original 6 Pack", (IEnumerable<char>)item);
         }
     }
 }
