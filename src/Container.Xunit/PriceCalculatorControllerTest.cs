@@ -5,8 +5,10 @@ using Moq;
 using PriceCalculator.API.Controllers;
 using PriceCalculator.API.Entities;
 using PriceCalculator.API.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -180,5 +182,75 @@ namespace Container.Xunit
             Assert.IsType<Voyage>(item);
             Assert.Equal("Guinness Original 6 Pack", (IEnumerable<char>)item);
         }
+
+        // Here I am using Load Testing 
+        // RequestTime Method : Check application response time of the endpoint
+        // running on the local https://localhost:5000
+
+        [Fact]
+        // The test is failed because machine actively refusing : Method would be works when we deployed in a server
+
+        public void RequestTime()
+        {
+            DateTime start;
+            DateTime end;
+            using (var client = new HttpClient())
+            {
+                start = DateTime.Now;
+                var response = client.GetAsync("http://localhost:5000/PriceCalculator/GetVoyages").Result;
+                end = DateTime.Now;
+            }
+            var expected = 1;
+            var actual = (int)(end - start).TotalMilliseconds;
+            Assert.True(actual <= expected, $"Expected total milliseconds of less than or equal to {expected} but was {actual}.");
+        }
+
+        [Fact]
+       
+        public void AverageResponseTime_100Requests()
+        {
+            var allResponseTimes = new List<(DateTime Start, DateTime End)>();
+
+            for (var i = 0; i < 100; i++)
+            {
+                using (var client = new HttpClient())
+                {
+                    var start = DateTime.Now;
+                    var response = client.GetAsync("http://localhost:5000/api/cookbook").Result;
+                    var end = DateTime.Now;
+
+                    allResponseTimes.Add((start, end));
+                }
+            }
+
+            var expected = 1;
+            var actual = (int)allResponseTimes.Select(r => (r.End - r.Start).TotalMilliseconds).Average();
+            Assert.True(actual <= expected, $"Expected average response time of less than or equal to {expected} ms but was {actual} ms.");
+        }
+
+        [Fact]
+        public void AverageResponseTime_1000Requests()
+        {
+            var allResponseTimes = new List<(DateTime Start, DateTime End)>();
+
+            for (var i = 0; i < 1000; i++)
+            {
+                using (var client = new HttpClient())
+                {
+                    var start = DateTime.Now;
+                    var response = client.GetAsync("http://localhost:5000/api/cookbook").Result;
+                    var end = DateTime.Now;
+
+                    allResponseTimes.Add((start, end));
+                }
+            }
+
+            var expected = 1;
+            var actual = (int)allResponseTimes.Select(r => (r.End - r.Start).TotalMilliseconds).Average();
+            Assert.True(actual <= expected, $"Expected average response time of less than or equal to {expected} ms but was {actual} ms.");
+        }
+
+
+
     }
 }
